@@ -1,0 +1,288 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.app-header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.app-main {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.placeholder {
+  background: white;
+  border-radius: 8px;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.placeholder h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.placeholder p {
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+/* Add your component styles here */
+
+/* Main content wrapper
+   Centers the app and limits width for readability */
+.app-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Base form layout
+   Used for general spacing and structure */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+/* Base styling for form controls */
+form input,
+form textarea,
+form select,
+form button {
+  padding: 8px;
+  font-size: 14px;
+}
+
+/* Ensure textarea spans full width */
+form textarea {
+  min-width: 100%;
+  resize: vertical;
+}
+
+/* Global button cursor */
+button {
+  cursor: pointer;
+}
+
+/* Grid layout for task cards
+   Displays tasks in a multi column layout */
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* Individual task card styling */
+.task-card {
+  border: 1px solid #e5e7eb;
+  padding: 16px;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+/* Task form container
+   Used inside modal popup */
+.task-form {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+/* Task form input styling */
+.task-form input,
+.task-form textarea,
+.task-form select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+/* Task form textarea height control */
+.task-form textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* Bottom row in task form
+   Contains date, priority, and submit button */
+.form-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+/* Allow inputs in form row to share space */
+.form-row input,
+.form-row select {
+  flex: 1;
+}
+
+/* Primary submit button styling */
+.form-row button {
+  padding: 10px 16px;
+  border: none;
+  background: #000000;
+  color: #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Disabled submit button state */
+.form-row button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Error message styling for form validation */
+.form-error {
+  margin-top: 10px;
+  color: #b91c1c;
+  font-size: 13px;
+}
+
+/* Filter controls container */
+.filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Filter dropdown styling */
+.filters select {
+  min-width: 200px;
+  height: 40px;
+  padding: 0 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+/* Top bar layout
+   Holds filters and Add New Task button */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Primary action button */
+.primary-btn {
+  height: 40px;
+  padding: 0 16px;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Modal background overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal container */
+.modal {
+  background: #ffffff;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+/* Modal header layout */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* Close button inside modal */
+.close-btn {
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  /* Stack form fields vertically on small screens */
+  form {
+    flex-direction: column;
+  }
+
+  /* Switch task grid to single column */
+  .task-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stack form row items vertically */
+  .form-row {
+    flex-direction: column;
+  }
+
+  /* Full width button on mobile */
+  .form-row button {
+    width: 100%;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+    /* Filters stack vertically */
+  .filters {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .filters select {
+    width: 100%;
+  }
+  
+   .primary-btn {
+    width: 100%;
+    height: 44px;
+    font-size: 15px;
+  }
+}
